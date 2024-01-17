@@ -19,6 +19,16 @@
 def split_video(input_file, output_prefix, chunk_duration=15):
 ```
 
+## До
+
+![](https://i.imgur.com/4BHVyml.png)
+
+---
+
+## После
+
+![](https://i.imgur.com/hx9yI5e.png)
+
 ---
 
 ## Установка
