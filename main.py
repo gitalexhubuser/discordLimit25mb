@@ -1,3 +1,6 @@
+import os
+import tkinter as tk
+from tkinterdnd2 import TkinterDnD, DND_FILES
 from moviepy.editor import VideoFileClip
 
 def split_video(input_file, output_prefix, chunk_duration=15):
@@ -13,8 +16,22 @@ def split_video(input_file, output_prefix, chunk_duration=15):
         output_file = f"{output_prefix}_part{i + 1}.mp4"
         chunk_clip.write_videofile(output_file, codec="libx264", audio_codec="aac")
 
-if __name__ == "__main__":
-    input_video = "123.mp4"  # Укажите путь к вашему видеофайлу
-    output_prefix = "prefix"  # Префикс для имен выходных файлов
+def on_drop(event):
+    input_file = event.data
+    output_prefix = os.path.splitext(os.path.basename(input_file))[0] + "_output"
+    split_video(input_file, output_prefix)
+    status_var.set(f"Видео успешно нарезано: {output_prefix}")
 
-    split_video(input_video, output_prefix)
+app = TkinterDnD.Tk()
+app.geometry("400x200")  # Изменение размера окна
+
+status_var = tk.StringVar()
+status_label = tk.Label(app, textvariable=status_var, wraplength=300)
+status_label.pack(pady=10)
+
+status_var.set("Перетащите видеофайл сюда для нарезки.")
+
+app.drop_target_register(DND_FILES)
+app.dnd_bind('<<Drop>>', on_drop)
+
+app.mainloop()
