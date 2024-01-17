@@ -1,2 +1,2 @@
 pip install moviepy
-# pip install tk tkinterdnd2
+pip install tk tkinterdnd2
