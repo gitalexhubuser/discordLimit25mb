@@ -1,6 +1,8 @@
 # discordLimit25mb
 
-https://i.imgur.com/bGnhrGR.png
+![](https://i.imgur.com/bGnhrGR.png)
+
+![](https://i.imgur.com/ZR94TDk.png)
 
 ## Описание
 
@@ -20,4 +22,4 @@ https://i.imgur.com/bGnhrGR.png
 # Ссылки
 | Описание | Ссылка |
 | ------ | ------ |
-Репо: | [сайт](ссылка)
+Репо: | [github.com/gitalexhubuser/discordLimit25mb](https://github.com/gitalexhubuser/discordLimit25mb)
